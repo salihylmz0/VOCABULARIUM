@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundtype2">
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/startOfLevel"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           app:layout_constraintGuide_percent="0.07"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/endOfLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.38"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startOfLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.45"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/endOfLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.55"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startOfStage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.62"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/endOfStage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9"/>
+        <TextView
+            android:id="@+id/titleLevel"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="@font/toolbar_title_font"
+            android:gravity="bottom|center"
+            android:text="Upper Intermediate"
+            app:layout_constraintDimensionRatio="4:1"
+            android:textColor="@color/text2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/endOfLevel"
+            app:layout_constraintStart_toStartOf="@id/startOfLevel"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/middleLine"
+            android:layout_width="40dp"
+            android:layout_height="0dp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="@font/toolbar_title_font"
+            android:gravity="bottom|center"
+            android:text="-"
+            android:textColor="@color/text2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/endOfLine"
+            app:layout_constraintStart_toStartOf="@+id/startOfLine"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/titleStage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="@font/toolbar_title_font"
+            android:gravity="bottom|center"
+            android:text="Stage 110"
+            app:layout_constraintDimensionRatio="4:1"
+            android:textColor="@color/text2"
+            android:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/endOfStage"
+            app:layout_constraintStart_toStartOf="@+id/startOfStage"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

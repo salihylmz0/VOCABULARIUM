@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        tools:layout="@layout/fragment_home"
+        android:name="com.example.vocabularium.fragments.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_sideActivity"
+            app:destination="@id/sideActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/myWordsFragment"
+        tools:layout="@layout/fragment_my_words"
+        android:name="com.example.vocabularium.fragments.MyWordsFragment"
+        android:label="MyWordsFragment" >
+        <action
+            android:id="@+id/action_myWordsFragment_to_myWordsPracticeFragment"
+            app:destination="@id/myWordsPracticeFragment" />
+        <action
+            android:id="@+id/action_myWordsFragment_to_myWordsPracticeActivity"
+            app:destination="@id/myWordsPracticeActivity" />
+        <action
+            android:id="@+id/action_myWordsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dictionaryFragment"
+        tools:layout="@layout/fragment_dictionary"
+        android:name="com.example.vocabularium.fragments.DictionaryFragment"
+        android:label="DictionaryFragment" >
+        <action
+            android:id="@+id/action_dictionaryFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        tools:layout="@layout/fragment_profile"
+        android:name="com.example.vocabularium.fragments.ProfileFragment"
+        android:label="ProfileFragment" >
+        <action
+            android:id="@+id/action_profileFragment_to_userInformationUpdate2"
+            app:destination="@id/userInformationUpdate2" />
+        <action
+            android:id="@+id/action_profileFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_authenticationActivity"
+            app:destination="@id/authenticationActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/authenticationActivity"
+        android:name="com.example.vocabularium.activities.AuthenticationActivity"
+        android:label="activity_authentication"
+        tools:layout="@layout/activity_authentication" />
+    <activity
+        android:id="@+id/sideActivity"
+        android:name="com.example.vocabularium.activities.SideActivity"
+        android:label="activity_side"
+        tools:layout="@layout/activity_side" />
+    <fragment
+        android:id="@+id/myWordsPracticeFragment"
+        android:name="com.example.vocabularium.fragments.MyWordsPracticeFragment"
+        android:label="MyWordsPracticeFragment"
+        tools:layout="@layout/fragment_my_words_practice">
+        <action
+            android:id="@+id/action_myWordsPracticeFragment_to_myWordsFragment"
+            app:destination="@id/myWordsFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/myWordsPracticeActivity"
+        android:name="com.example.vocabularium.activities.MyWordsPracticeActivity"
+        android:label="MyWordsPracticeActivity"
+        tools:layout="@layout/activity_practice"/>
+    <fragment
+        android:id="@+id/userInformationUpdate2"
+        android:name="com.example.vocabularium.fragments.UserInformationUpdate"
+        android:label="UserInformationUpdate"
+        tools:layout="@layout/fragment_user_information_update">
+        <action
+            android:id="@+id/action_userInformationUpdate2_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/authLoginFragment2"
+        android:name="com.example.vocabularium.fragments.AuthLoginFragment"
+        android:label="AuthLoginFragment"
+        tools:layout="@layout/fragment_auth_login">
+        <action
+            android:id="@+id/action_authLoginFragment2_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.vocabularium.activities.MainActivity"
+        android:label="MainActivity"
+        tools:layout="@layout/activity_main"/>
+</navigation>

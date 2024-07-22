@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/authentication"
+        android:iconTint="@color/backgroundtype2"
+        android:icon="@drawable/logout_2_svgrepo_com"
+        android:title="@string/log_out"/>
+    <item
+        android:id="@+id/nawDrawerExit"
+        android:iconTint="@color/backgroundtype2"
+        android:icon="@drawable/door_exit_svgrepo_com"
+        android:title="@string/menu_out"/>
+
+</menu>

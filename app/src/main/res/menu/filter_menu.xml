@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/all" android:title="All"/>
+    <item android:id="@+id/beginner" android:title="Beginner"/>
+    <item android:id="@+id/elementary" android:title="Elementary"/>
+    <item android:id="@+id/intermediate" android:title="Intermediate"/>
+    <item android:id="@+id/upperIntermediate" android:title="Upper Intermediate"/>
+    <item android:id="@+id/advanced" android:title="Advanced"/>
+    <item android:id="@+id/dictionary" android:title="Dictionary"/>
+</menu>

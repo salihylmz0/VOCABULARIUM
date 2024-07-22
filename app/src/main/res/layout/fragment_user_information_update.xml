@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="userUpdateFragmentObject" type="com.example.vocabularium.fragments.UserInformationUpdate" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.UserInformationUpdate">
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topOfpicture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottomOfpicture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.3"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topOfsettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.35"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottomOfsettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.56" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rightBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.17" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/leftBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.02" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topOfArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.01"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startOfLL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05"/>
+        <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/startOfApply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.38"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/endOfApply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.61"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topOfApply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.57"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startOfChange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.35"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/endOfChange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.65"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topOffChange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.65" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/endOfLL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95"/>
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/bottomOfsettings"
+            app:layout_constraintEnd_toEndOf="@id/endOfLL"
+            app:layout_constraintStart_toStartOf="@id/startOfLL"
+            app:layout_constraintTop_toTopOf="@+id/topOfsettings">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="Name"
+                android:textColor="@color/backgroundtype2"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="2"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/updateName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/text1"
+                    android:inputType="text"
+                    android:hint="name"
+                    android:textColor="@color/text1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="Email"
+                android:textColor="@color/text1" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emailLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="2"
+                android:hint="Email"
+                android:textColorHint="@color/levelsBottom"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/updateEmail"
+                    android:hint="email"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/text1"
+                    android:inputType="text"
+                    android:textColor="@color/text1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/applyButton"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="2:1"
+            android:background="@drawable/background3"
+            android:fontFamily="@font/quicksand_bold"
+            android:onClick="@{()->userUpdateFragmentObject.applyChanges()}"
+            android:text="Apply"
+            android:textColor="@color/text2"
+            app:layout_constraintEnd_toStartOf="@+id/endOfApply"
+            app:layout_constraintStart_toStartOf="@+id/startOfApply"
+            app:layout_constraintTop_toTopOf="@+id/topOfApply"
+            app:layout_constraintVertical_bias="0.113" />
+
+        <ImageView
+            android:id="@+id/backToProfile"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="1:1"
+            android:onClick="@{()->userUpdateFragmentObject.backToProfile()}"
+            app:layout_constraintStart_toStartOf="@id/leftBack"
+            app:layout_constraintTop_toTopOf="@id/topOfArrow"
+            app:layout_constraintEnd_toEndOf="@id/rightBack"
+            app:srcCompat="@drawable/left_arrow_back_svgrepo_com" />
+
+        <ImageView
+            android:id="@+id/profileImage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:onClick="@{()->userUpdateFragmentObject.launchPhotoPicker()}"
+            app:layout_constraintBottom_toTopOf="@+id/bottomOfpicture"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/topOfpicture"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/profile_picture_change" />
+
+        <Button
+            android:id="@+id/chagnePassword"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/background3"
+            android:fontFamily="@font/quicksand_bold"
+            android:onClick="@{()->userUpdateFragmentObject.changePassword()}"
+            android:text="Change password"
+            android:textColor="@color/text2"
+            app:layout_constraintDimensionRatio="2.5:1"
+            app:layout_constraintEnd_toStartOf="@+id/endOfChange"
+            app:layout_constraintStart_toStartOf="@+id/startOfChange"
+            app:layout_constraintTop_toTopOf="@+id/topOffChange" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

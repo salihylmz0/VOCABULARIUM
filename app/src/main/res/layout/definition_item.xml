@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundtype2">
+
+        <TextView
+            android:id="@+id/definition"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/general_write_font"
+            app:layout_constraintStart_toEndOf="@id/definitonDot"
+            android:textColor="@color/backgroundtype4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/example"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/general_write_font"
+            android:textColor="@color/backgroundtype4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/definition"
+            app:layout_constraintTop_toBottomOf="@+id/definition" />
+
+        <ImageView
+            android:id="@+id/definitonDot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX="0.4"
+            android:scaleY="0.4"
+            app:layout_constraintTop_toTopOf="@id/definition"
+            app:layout_constraintEnd_toStartOf="@id/definition"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/definition_dot" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

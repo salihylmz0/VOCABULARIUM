@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#ECEFEF</color>
+    <color name="teal_700">#CA2B2B</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <!-- Customized color descriptions-->
+    <color name="backgroundtype4">#B1B1B1</color>
+    <color name="backgroundtype3">#304283</color> <!-- progress   -->
+    <color name="backgroundtype2">#1b1f31</color> <!-- main dark  -->
+    <color name="mainbackground">#e2e2e2</color>  <!-- contrast light  -->
+    <color name="levelsBottom">#c5ced9</color>
+    <color name="backgroundtype5">#FFEFEFDF</color>
+
+
+
+    <color name="levels1">@color/selectedobject</color>
+    <color name="levels2">@color/levelsBottom</color>
+
+    <color name="text1">@color/backgroundtype2</color><!-- darker than main dark possibly  -->
+    <color name="text2">@color/mainbackground</color>
+    <color name="text3">#000000</color>
+
+    <color name="progressbar">#B5A4A3</color>
+    <color name="selectedobject">#FFFDC5</color>
+
+    <color name="learnt">#FF47C025</color>
+    <color name="notLearnt">#FFCA2B2B</color>
+    <color name="selectedRVLevel">@color/learnt</color>
+
+    <color name="light_blue_400">#FF29B6F6</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="gray_400">#FFBDBDBD</color>
+    <color name="gray_600">#FF757575</color>
+    <color name="arrow_background">#D4D5CC</color>
+</resources>

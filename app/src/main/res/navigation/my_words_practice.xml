@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_words_practice"
+    app:startDestination="@id/myWordsPracticeFragment2">
+
+    <fragment
+        android:id="@+id/myWordsPracticeFragment2"
+        android:name="com.example.vocabularium.fragments.MyWordsPracticeFragment"
+        android:label="MyWordsPracticeFragment"
+        tools:layout="@layout/fragment_my_words_practice">
+    </fragment>
+
+</navigation>

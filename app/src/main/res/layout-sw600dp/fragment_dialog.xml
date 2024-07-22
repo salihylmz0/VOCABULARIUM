@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="dialogFragmentObject" type="com.example.vocabularium.dialog_fragments.DialogFragmentFinishPractice" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.DialogFragment">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="2:1.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/startOfText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.05"/>
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/endOfText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.95"/>
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/topOfText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.1"/>
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/startOfNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.18"/>
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/endOfNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.41"/>
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/topOfAnswers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.8"/>
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/startOfYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.59"/>
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/endOfYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.82"/>
+
+                <TextView
+                    android:id="@+id/leavingAsk"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintDimensionRatio="5:1"
+                    android:fontFamily="@font/general_write_font"
+                    android:text="@string/leavingAsking"
+                    android:autoSizeTextType="uniform"
+                    app:layout_constraintEnd_toEndOf="@id/endOfText"
+                    app:layout_constraintStart_toStartOf="@id/startOfText"
+                    app:layout_constraintTop_toTopOf="@id/topOfText" />
+
+                <Button
+                    android:id="@+id/yes"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    app:layout_constraintDimensionRatio="1.9:1"
+                    android:backgroundTint="@color/levelsBottom"
+                    android:background="@drawable/background3"
+                    android:fontFamily="@font/general_write_font"
+                    android:onClick="@{()->dialogFragmentObject.yesButton()}"
+                    android:text="@string/yes"
+                    app:layout_constraintEnd_toStartOf="@+id/endOfYes"
+                    app:layout_constraintStart_toStartOf="@+id/startOfYes"
+                    app:layout_constraintTop_toTopOf="@+id/topOfAnswers" />
+
+                <Button
+                    android:id="@+id/continu"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintDimensionRatio="1.9:1"
+                    android:background="@drawable/background3"
+                    android:backgroundTint="@color/levelsBottom"
+                    android:fontFamily="@font/general_write_font"
+                    android:onClick="@{()->dialogFragmentObject.continueButton()}"
+                    android:text="@string/continu"
+                    android:textSize="25sp"
+                    app:layout_constraintEnd_toStartOf="@+id/endOfNo"
+                    app:layout_constraintStart_toStartOf="@+id/startOfNo"
+                    app:layout_constraintTop_toTopOf="@+id/topOfAnswers" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

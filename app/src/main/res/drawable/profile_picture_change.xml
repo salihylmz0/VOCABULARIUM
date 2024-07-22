@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/profile_vector"/>
+    <item android:drawable="@drawable/exchange_change_svgrepo_com" android:width="5dp" android:height="5dp" android:gravity="bottom|end"/>
+</layer-list>

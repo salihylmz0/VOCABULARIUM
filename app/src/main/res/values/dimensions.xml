@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="radius1">20dp</dimen>
+    <dimen name="radius2">10dp</dimen>
+    <dimen name="radius4">5dp</dimen>
+    <dimen name="radius3">45dp</dimen>
+    <dimen name="progressbarthicknessratio">20</dimen>
+    <dimen name="itemTextSize">12sp</dimen>
+
+</resources>

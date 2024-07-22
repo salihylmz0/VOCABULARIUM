@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Vocabularium</string>
+
+    <!-- Home Fragment -->
+    <string name="start">Start</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_out">Close</string>
+    <string name="log_out">Log Out</string>
+    <string name="log_in">Login</string>
+    <string name="email">Email</string>
+    <string name="name">Name</string>
+    <string name="confirmPassword">Confirm Password</string>
+    <string name="nameHint">Enter your name</string>
+    <string name="password">Password</string>
+    <string name="emailHint">Enter your email</string>
+    <string name="passwordHint">Enter your password</string>
+    <string name="Profile_textUp">Salih Yılmaz</string>
+    <string name="Profile_textDown">salihsalih@gmail.com</string>
+    <string name="remeber_me">Stay logged in?</string>
+    <string name="register">Register</string>
+    <string name="forgot_information">Forgot password?</string>
+    <string name="registerHere">Don\'t have an account yet?Register here</string>
+    <string name="leavingAsking">Your progress at this stage will be lost. Are you sure you want to exit?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="continu">Continue</string>
+    <string name="state_complete">Stage completed...</string>
+    <string name="backTostage">Back to stages</string>
+
+    <!-- Language Levels -->
+    <string-array name="language_levels">
+        <item>Beginner</item>
+        <item>Elementary</item>
+        <item>Intermediate</item>
+        <item>Upper Intermediate</item>
+        <item>Advanced</item>
+    </string-array>
+
+    <integer name="sizeOfStage">10</integer>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

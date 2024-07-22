@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" >
+    <data>
+        <variable name="myWordsFragmentObject" type="com.example.vocabularium.fragments.MyWordsFragment" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/mainbackground"
+        tools:context=".fragments.MyWordsFragment">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startOfSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/endOfSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.76"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topOfSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.02"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startOfButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.4" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/endOfButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.55" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topOfRV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.18" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottomOfRV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.9"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startOfhSearcButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.8" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/endOfSearchButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.94"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottomOfFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.18" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topOfFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/endOfNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25"/>
+        <Button
+            android:id="@+id/practiceButton"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/background3"
+            android:backgroundTint="@color/backgroundtype2"
+            app:layout_constraintDimensionRatio="2:1.2"
+            android:fontFamily="@font/general_write_font"
+            android:onClick="@{()->myWordsFragmentObject.getToPractice()}"
+            android:text="PRACTICE"
+            android:textColor="@color/mainbackground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/endOfButton"
+            app:layout_constraintStart_toStartOf="@+id/startOfButton"
+            app:layout_constraintTop_toBottomOf="@id/myWordsRV" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edittextLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:helperTextEnabled="false"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toStartOf="@id/endOfSearch"
+            app:startIconDrawable="@drawable/search_svgrepo_com"
+            app:startIconTint="@color/backgroundtype2"
+            app:layout_constraintStart_toStartOf="@id/startOfSearch"
+            app:layout_constraintBottom_toTopOf="@id/topOfFilter"
+            app:layout_constraintTop_toTopOf="@id/topOfSearch" >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/searchfromMw"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/edittext"
+                android:ems="10"
+                android:textSize="20sp"
+                android:fontFamily="@font/quicksand"
+                android:hint="Search from my words"
+                android:inputType="text"
+                android:digits="abcdefghijklmnopqrstuvwxyz"
+                android:paddingStart="55dp"
+                android:textColorHint="@color/backgroundtype2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/searchButton2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/button_background1"
+            android:fontFamily="@font/general_write_font"
+            android:onClick="@{()->myWordsFragmentObject.searchWord()}"
+            android:text="Search"
+            android:textColor="@color/mainbackground"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@id/topOfFilter"
+            app:layout_constraintEnd_toEndOf="@id/endOfSearchButton"
+            app:layout_constraintStart_toStartOf="@id/startOfhSearcButton"
+            app:layout_constraintTop_toTopOf="@+id/topOfSearch"
+            app:layout_constraintVertical_bias="1.0" />
+        <ImageView
+            android:id="@+id/filter"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:onClick="@{()->myWordsFragmentObject.filterMenu()}"
+            app:layout_constraintBottom_toTopOf="@+id/bottomOfFilter"
+            app:layout_constraintDimensionRatio="1:1.7"
+            app:layout_constraintEnd_toStartOf="@id/endOfSearch"
+            app:layout_constraintHorizontal_bias="0.895"
+            app:layout_constraintTop_toBottomOf="@+id/topOfFilter"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/filter_list_svgrepo_com" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/myWordsRV"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/bottomOfRV"
+            app:layout_constraintTop_toBottomOf="@id/topOfRV"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/mywordsNumber"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="@font/general_write_font"
+            android:autoSizeTextType="uniform"
+            app:layout_constraintDimensionRatio="2:1"
+            android:gravity="center"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/topOfRV"
+            app:layout_constraintEnd_toStartOf="@+id/endOfNumber"
+            app:layout_constraintStart_toStartOf="@+id/startOfSearch"
+            app:layout_constraintTop_toBottomOf="@+id/edittextLayout" />
+
+        <ImageView
+            android:id="@+id/threeDot"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:onClick="@{()->myWordsFragmentObject.cleanMyWords()}"
+            app:layout_constraintBottom_toTopOf="@+id/bottomOfFilter"
+            app:layout_constraintDimensionRatio="1:2"
+            app:layout_constraintEnd_toEndOf="@id/endOfSearchButton"
+            app:layout_constraintTop_toTopOf="@+id/topOfFilter"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/three_dot" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/side_activity_navigation"
+    app:startDestination="@id/studyFragment">
+
+    <fragment
+        android:id="@+id/studyFragment"
+        android:name="com.example.vocabularium.fragments.StudyFragment"
+        android:label="StudyFragment"
+        tools:layout="@layout/fragment_study">
+        <action
+            android:id="@+id/action_studyFragment_to_completionFragment"
+            app:destination="@id/completionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/completionFragment"
+        android:name="com.example.vocabularium.fragments.CompletionFragment"
+        android:label="CompletionFragment"
+        tools:layout="@layout/fragment_completion"/>
+</navigation>

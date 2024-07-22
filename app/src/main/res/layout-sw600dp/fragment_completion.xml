@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="completionFragmentObject" type="com.example.vocabularium.fragments.CompletionFragment" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/mainbackground"
+        tools:context=".fragments.CompletionFragment">
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startOfThick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.2"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/endOfThick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.8"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topOfThick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.16"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startOfText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/endOfText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topOfText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.48"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topOfButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.83" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startOfButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.35"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/endOfButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.65"/>
+
+        <ImageView
+            android:id="@+id/thick"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="144dp"
+            android:src="@drawable/checked_tick_svgrepo_com"
+            app:layout_constraintDimensionRatio="2:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="2:1"
+            android:textColor="@color/text2"
+            android:fontFamily="@font/quicksand_bold"
+            android:onClick="@{()->completionFragmentObject.getToStages()}"
+            android:shadowRadius="500"
+            android:background="@drawable/background3"
+            android:text="@string/backTostage"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/endOfButton"
+            app:layout_constraintStart_toStartOf="@+id/startOfButton"
+            app:layout_constraintTop_toTopOf="@+id/topOfButton" />
+
+        <TextView
+            android:id="@+id/stagecompleted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:fontFamily="@font/general_write_font"
+            android:text="@string/state_complete"
+            android:textColor="@color/backgroundtype2"
+            android:textSize="40sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.411"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/thick" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

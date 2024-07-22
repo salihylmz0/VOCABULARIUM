@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "529297571031",
+    "project_id": "vocabularium-17e40",
+    "storage_bucket": "vocabularium-17e40.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:529297571031:android:de6fd552646253455f4492",
+        "android_client_info": {
+          "package_name": "com.example.vocabularium"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcIPmwzwiZgwoPypBsBi09abf1d5Kf6gQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="studyFragmentObject" type="com.example.vocabularium.fragments.StudyFragment" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/studyFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.StudyFragment">
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottomToolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.08"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topOfCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.15"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottomOfCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.85"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topOfCross"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/endOfCross"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.91" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startOfCross"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.77" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startOfNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.45" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/endOfNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.6" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topOfArrows"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.88" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottomOfArrows"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.93" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topOfThumbs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.9" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottomOfThumbs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.982" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startOfNot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startOfOk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.65" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startOfAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.44" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/endOfAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.575" />
+
+        <include
+            android:id="@+id/customToolbar"
+            layout="@layout/custom_toolbar2"
+            app:layout_constraintBottom_toTopOf="@id/bottomToolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/studyCard"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="70dp"
+            android:background="@drawable/background6"
+            app:layout_constraintBottom_toBottomOf="@id/bottomOfCard"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/topOfCard"
+            app:layout_constraintVertical_bias="0.0">
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/startOfName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.07" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/endOfName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.73" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/topOfName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="6dp" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/startOfSound"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.75" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/endOfSound"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.95" />
+
+
+            <TextView
+                android:id="@+id/wordName"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center_vertical"
+                app:layout_constraintDimensionRatio="4:1"
+                android:fontFamily="@font/general_write_font"
+                android:textColor="@color/backgroundtype4"
+                android:textSize="50sp"
+                app:layout_constraintEnd_toEndOf="@+id/endOfName"
+                app:layout_constraintStart_toStartOf="@id/startOfName"
+                app:layout_constraintTop_toTopOf="@id/topOfName" />
+
+            <ImageView
+                android:id="@+id/sound"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:onClick="@{()->studyFragmentObject.pronounciationSound()}"
+                app:layout_constraintBottom_toBottomOf="@id/wordName"
+                app:layout_constraintEnd_toEndOf="@id/endOfSound"
+                app:layout_constraintTop_toTopOf="@id/topOfName"
+                app:layout_constraintStart_toStartOf="@id/startOfSound"
+                app:srcCompat="@drawable/sound" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/meaningsRV"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/wordName"
+                app:layout_constraintVertical_bias="0.0" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="2:1"
+            android:onClick="@{()->studyFragmentObject.goBack()}"
+            app:layout_constraintBottom_toBottomOf="@id/bottomOfArrows"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/topOfArrows"
+            app:srcCompat="@drawable/back_arrow"
+            tools:layout_editor_absoluteY="724dp" />
+
+        <ImageView
+            android:id="@+id/forwaderButton"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="2:1"
+            android:onClick="@{()->studyFragmentObject.goForward()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/bottomOfArrows"
+            app:layout_constraintTop_toTopOf="@id/topOfArrows"
+            app:srcCompat="@drawable/forward_arrow" />
+
+        <ImageView
+            android:id="@+id/notLearnt"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="1:1.5"
+            android:onClick="@{()->studyFragmentObject.notLearntButton()}"
+            app:layout_constraintBottom_toBottomOf="@id/bottomOfThumbs"
+            app:layout_constraintStart_toStartOf="@+id/startOfNot"
+            app:layout_constraintTop_toTopOf="@id/topOfThumbs"
+            app:srcCompat="@drawable/thumb_down_svgrepo_com" />
+
+        <ImageView
+            android:id="@+id/learnt"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="1:1.5"
+            android:onClick="@{()->studyFragmentObject.learntButton()}"
+            app:layout_constraintStart_toStartOf="@id/startOfOk"
+            app:layout_constraintBottom_toBottomOf="@id/bottomOfThumbs"
+            app:layout_constraintTop_toTopOf="@id/topOfThumbs"
+            app:srcCompat="@drawable/thumb_up_svgrepo_com_notlearnt" />
+
+        <TextView
+            android:id="@+id/wordPositon"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="@font/anton"
+            android:gravity="center"
+            android:text="1/10"
+            android:textColor="@color/backgroundtype2"
+            android:autoSizeTextType="uniform"
+            app:layout_constraintTop_toTopOf="@id/topOfCross"
+            app:layout_constraintBottom_toTopOf="@+id/studyCard"
+            app:layout_constraintEnd_toEndOf="@id/endOfNumber"
+            app:layout_constraintStart_toStartOf="@id/startOfNumber" />
+
+        <ImageView
+            android:id="@+id/cross"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="@id/topOfCross"
+            app:layout_constraintBottom_toTopOf="@+id/topOfCard"
+            app:layout_constraintEnd_toEndOf="@id/endOfCross"
+            app:layout_constraintStart_toStartOf="@id/startOfCross"
+            app:srcCompat="@drawable/cross" />
+
+        <ImageView
+            android:id="@+id/addMyWordsButton"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="1:2"
+            android:onClick="@{()->studyFragmentObject.addMyWord()}"
+            app:layout_constraintStart_toStartOf="@id/startOfAdd"
+            app:layout_constraintEnd_toEndOf="@id/endOfAdd"
+            app:layout_constraintBottom_toBottomOf="@id/bottomOfThumbs"
+            app:layout_constraintTop_toTopOf="@id/topOfThumbs"
+            app:srcCompat="@drawable/plus_svgrepo_com" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
