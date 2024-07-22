@@ -41,7 +41,6 @@ class ProfileFragmentViewModel @Inject constructor(@ApplicationContext val conte
 
         val userDataObserver = Observer<ArrayList<FirebaseWords>>{userData->
             val temporary = userData.filter {item-> item.wordState == "true" }
-            Log.e("learnt number",temporary.size.toString())
             learntWordsNumber.value = temporary.size
         }
         userData.observeForever(userDataObserver)

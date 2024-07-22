@@ -47,7 +47,6 @@ class HomeFragment : Fragment() {
         //viewModel.deleteAllWordsFromFB()
         user.value = auth.currentUser
         updateUserEmail()
-
         viewModel.allRoomWords.observe(viewLifecycleOwner,{
             viewModel.checkFirstLogin(design.progressBarHomeFragment)
         })

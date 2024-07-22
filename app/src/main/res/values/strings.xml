@@ -1,7 +1,16 @@
 <resources>
     <string name="app_name">Vocabularium</string>
 
-    <!-- Home Fragment -->
+
+    <!-- Home Fragment View Model -->
+    <string name="firstTimeLog">First time Login</string>
+    <string name="False">False</string>
+    <string name="firstLoadings">First loadings are being made, this may take to 2 minutes, please wait...</string>
+    <string name="True">true</string>
+    <string name="userInfo">User Information</string>
+    <string name="userEmail">userEmail</string>
+    <string name="users">Users</string>
+    <!-- *****************************  -->
     <string name="start">Start</string>
     <string name="menu_settings">Settings</string>
     <string name="menu_out">Close</string>

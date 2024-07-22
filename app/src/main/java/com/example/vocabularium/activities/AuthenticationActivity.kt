@@ -15,5 +15,5 @@ class AuthenticationActivity : AppCompatActivity() {
         setContentView(R.layout.activity_authentication)
 
     }
-    //salih yılmaz
+
 }

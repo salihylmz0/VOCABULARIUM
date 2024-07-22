@@ -12,15 +12,15 @@ import com.example.vocabularium.activities.MainActivity
 import com.example.vocabularium.databinding.FragmentDialogBinding
 
 class DialogFragmentFinishPractice : DialogFragment() {
-        private lateinit var tasarim: FragmentDialogBinding
+        private lateinit var design: FragmentDialogBinding
         override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-            tasarim = DataBindingUtil.inflate(inflater, R.layout.fragment_dialog,container,false)
-            return tasarim.root
+            design = DataBindingUtil.inflate(inflater, R.layout.fragment_dialog,container,false)
+            return design.root
         }
 
         override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
             super.onViewCreated(view, savedInstanceState)
-            tasarim.dialogFragmentObject = this
+            design.dialogFragmentObject = this
 
         }
 

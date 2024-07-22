@@ -15,15 +15,15 @@ import com.example.vocabularium.databinding.FragmentBackPressDialogBinding
 class BackPressDialogFragment : DialogFragment() {
 
     val animation = Flip()
-    private lateinit var tasarim: FragmentBackPressDialogBinding
+    private lateinit var design: FragmentBackPressDialogBinding
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        tasarim = DataBindingUtil.inflate(inflater, R.layout.fragment_back_press_dialog,container,false)
-        return tasarim.root
+        design = DataBindingUtil.inflate(inflater, R.layout.fragment_back_press_dialog,container,false)
+        return design.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        tasarim.backPressDialogObject = this
-        animation.InX(tasarim.root).apply { duration=1000;start() }
+        design.backPressDialogObject = this
+        animation.InX(design.root).apply { duration=1000;start() }
     }
     override fun onStart() {
         super.onStart()

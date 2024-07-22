@@ -3,7 +3,6 @@ package com.example.vocabularium.fragments
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -21,7 +20,6 @@ import com.example.vocabularium.dialog_fragments.LoginDialogFragment
 import com.example.vocabularium.exceptions.MyWordsSingleton
 import com.example.vocabularium.firebase.FirebaseWords
 import com.google.firebase.Firebase
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -34,19 +32,19 @@ class MyWordsFragment : Fragment() {
     private val user = Firebase.auth.currentUser
 
     private val fbReference = Firebase.database.reference
-    private lateinit var tasarim: FragmentMyWordsBinding
+    private lateinit var design: FragmentMyWordsBinding
     private  val viewModel: MyWordsFragmentViewModel by viewModels()
     var myWordsPractice = MyWordsSingleton
     var initializedObserver = false
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        tasarim = DataBindingUtil.inflate(inflater,R.layout.fragment_my_words,container,false)
-        return tasarim.root
+        design = DataBindingUtil.inflate(inflater,R.layout.fragment_my_words,container,false)
+        return design.root
 
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        tasarim.myWordsFragmentObject = this
+        design.myWordsFragmentObject = this
         if(user == null){
             isUserLoggedIn()
         }else{
@@ -73,8 +71,8 @@ class MyWordsFragment : Fragment() {
     fun rvMyWords(data:ArrayList<FirebaseWords>){
         updateWordsNumber(data)
         val myWordsAdapter = MyWordsRVAdapter(requireContext(),data)
-        tasarim.myWordsRV.adapter = myWordsAdapter
-        tasarim.myWordsRV.setHasFixedSize(true)
+        design.myWordsRV.adapter = myWordsAdapter
+        design.myWordsRV.setHasFixedSize(true)
         myWordsAdapter.myWordValue ={
             val dialog = DialogFragmentMyWords()
             dialog.show(parentFragmentManager,"my word dialog")
@@ -83,7 +81,7 @@ class MyWordsFragment : Fragment() {
     }
     fun filterMenu(){
         user?.let {
-            val filterMenu = PopupMenu(requireActivity(),tasarim.filter)
+            val filterMenu = PopupMenu(requireActivity(),design.filter)
             filterMenu.inflate(R.menu.filter_menu)
             filterMenu.setOnMenuItemClickListener {menuItem->
                 when(menuItem.itemId){
@@ -103,12 +101,12 @@ class MyWordsFragment : Fragment() {
     }
     fun getToPractice(){
         user?.let {
-            Navigation.findNavController(tasarim.practiceButton).navigate(R.id.action_myWordsFragment_to_myWordsPracticeActivity)
+            Navigation.findNavController(design.practiceButton).navigate(R.id.action_myWordsFragment_to_myWordsPracticeActivity)
         }
     }
     fun cleanMyWords(){
         user?.let {
-            val settings = PopupMenu(requireActivity(),tasarim.threeDot)
+            val settings = PopupMenu(requireActivity(),design.threeDot)
             settings.inflate(R.menu.menu_threedot_mywords)
             settings.setOnMenuItemClickListener { menuItem->
                 when(menuItem.itemId){
@@ -125,7 +123,7 @@ class MyWordsFragment : Fragment() {
     }
     fun searchWord(){
         user?.let {
-            viewModel.searchWords(tasarim.searchfromMw.text.toString())
+            viewModel.searchWords(design.searchfromMw.text.toString())
         }
 
     }
@@ -134,7 +132,7 @@ class MyWordsFragment : Fragment() {
         dialog.show(parentFragmentManager,"login dialog")
     }
     fun updateWordsNumber(data:ArrayList<FirebaseWords>){
-        tasarim.mywordsNumber.text = data.size.toString()+" words"
+        design.mywordsNumber.text = data.size.toString()+" words"
     }
     fun filterData(select:String):ArrayList<FirebaseWords>{
         val temporary = viewModel.myWordsFB.value!!.filter { it.wordLevel == select } as ArrayList
@@ -145,7 +143,7 @@ class MyWordsFragment : Fragment() {
         practice.practiceWords = data
     }
     fun editText(){
-        tasarim.searchfromMw.addTextChangedListener(object :TextWatcher{
+        design.searchfromMw.addTextChangedListener(object :TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) { }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) { }

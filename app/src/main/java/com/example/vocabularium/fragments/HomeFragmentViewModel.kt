@@ -53,9 +53,9 @@ class HomeFragmentViewModel @Inject constructor( @ApplicationContext val context
         searchedRoomWords.value = wordData
     }
 
-   val levelFBObserver = Observer<ArrayList<FirebaseWords>>{wordData->
-       convertDataFB(wordData,levelWordsAppData)
-   }
+    val levelFBObserver = Observer<ArrayList<FirebaseWords>>{wordData->
+        convertDataFB(wordData,levelWordsAppData)
+    }
     val levelRoomObserver = Observer<List<RoomWords>>{wordData->
         convertDataRoom(wordData,levelWordsAppData)
     }
@@ -106,13 +106,13 @@ class HomeFragmentViewModel @Inject constructor( @ApplicationContext val context
 
     //Firebase CRUD
     suspend fun addDataToFB(){
-            if (user.value != null){
-                for (i in 0..allRoomWords.value!!.size-1){
-                    var data = allRoomWords.value!![i]
-                    CoroutineScope(Dispatchers.Main).launch {
-                        addWordToFB(FirebaseWords(data.wordId.toString(),data.wordLevel,data.wordName,data.wordState)) }
-                }
+        if (user.value != null){
+            for (i in 0..allRoomWords.value!!.size-1){
+                var data = allRoomWords.value!![i]
+                CoroutineScope(Dispatchers.Main).launch {
+                    addWordToFB(FirebaseWords(data.wordId.toString(),data.wordLevel,data.wordName,data.wordState)) }
             }
+        }
     }
 
     fun getAllWordsFromFB():List<AppWords>{
@@ -132,7 +132,7 @@ class HomeFragmentViewModel @Inject constructor( @ApplicationContext val context
         firebaseDataRepository.deleteAllWordsFromFB()
     }
     fun convertDataFB(dataToConvert: ArrayList<FirebaseWords>,
-                    typeToConvert:MutableLiveData<List<List<AppWords>>>){
+                      typeToConvert:MutableLiveData<List<List<AppWords>>>){
         val allData = ArrayList<AppWords>()
         val levelData: List<List<AppWords>>
         dataToConvert.forEach{data->
@@ -142,7 +142,7 @@ class HomeFragmentViewModel @Inject constructor( @ApplicationContext val context
         typeToConvert.value=levelData
     }
     fun convertDataRoom(dataToConvert: List<RoomWords>,
-                      typeToConvert:MutableLiveData<List<List<AppWords>>>){
+                        typeToConvert:MutableLiveData<List<List<AppWords>>>){
         val allData = ArrayList<AppWords>()
         val levelData: List<List<AppWords>>
         dataToConvert.forEach{data->
@@ -173,12 +173,12 @@ class HomeFragmentViewModel @Inject constructor( @ApplicationContext val context
             .child("userEmail").setValue(email)}
     }
     suspend fun addWordToFB(word: FirebaseWords){
-            user.value?.let {user->
-                fbReference.child("Users")
-                    .child(user.uid)
-                    .child(word.wordLevel)
-                    .child(word.wordId)
-                    .setValue(word)
-            }
+        user.value?.let {user->
+            fbReference.child("Users")
+                .child(user.uid)
+                .child(word.wordLevel)
+                .child(word.wordId)
+                .setValue(word)
+        }
     }
 }

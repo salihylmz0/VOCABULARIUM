@@ -132,7 +132,6 @@ class FirebaseDataRepository @Inject constructor(@ApplicationContext val context
                 }
 
                 override fun onCancelled(error: DatabaseError) {
-                   Log.e("user Information error","${error.message}")
                 }
 
             })

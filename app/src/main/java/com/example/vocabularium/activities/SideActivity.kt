@@ -12,12 +12,12 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class SideActivity : AppCompatActivity() {
     private lateinit var viewModel: SideActivityViewModel
-    private lateinit var tasarim : ActivitySideBinding
+    private lateinit var design : ActivitySideBinding
     private  var myObject=MySingleton
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         window.statusBarColor = ContextCompat.getColor(this,R.color.backgroundtype2)//I tried to change this on Xml but it did not work
-        tasarim = DataBindingUtil.setContentView(this,R.layout.activity_side)
+        design = DataBindingUtil.setContentView(this,R.layout.activity_side)
 
     }
 }
