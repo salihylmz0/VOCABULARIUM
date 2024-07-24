@@ -105,15 +105,6 @@ class HomeFragmentViewModel @Inject constructor( @ApplicationContext val context
     }
 
     //Firebase CRUD
-    suspend fun addDataToFB(){
-        if (user.value != null){
-            for (i in 0..allRoomWords.value!!.size-1){
-                var data = allRoomWords.value!![i]
-                CoroutineScope(Dispatchers.Main).launch {
-                    addWordToFB(FirebaseWords(data.wordId.toString(),data.wordLevel,data.wordName,data.wordState)) }
-            }
-        }
-    }
 
     fun getAllWordsFromFB():List<AppWords>{
         val allData = ArrayList<AppWords>()
@@ -153,32 +144,9 @@ class HomeFragmentViewModel @Inject constructor( @ApplicationContext val context
     }
 
     //-------------
-    fun checkFirstLogin(progressBar: ProgressBar){
-        if (user.value != null){
-            fbReference.child("First time Login").child(user.value!!.uid).get().addOnSuccessListener{snapshot->
-                if (snapshot.value == "false"){
-                    toastMessage.value = "First loadings are being made, this may take to 2 minutes, please wait..."
-                    isFirstLoggedIn.value = false
-                    progressBar.visibility = View.VISIBLE
-                    fbReference.child("First time Login").child(user.value!!.uid).setValue("true")
-                    CoroutineScope(Dispatchers.Main).launch {
-                        addDataToFB()
-                    }
-                }
-            }
-        }
-    }
+
     fun updateUserEmail(email:String){
         user.value?.let {user->fbReference.child("User Information").child(user.uid)
             .child("userEmail").setValue(email)}
-    }
-    suspend fun addWordToFB(word: FirebaseWords){
-        user.value?.let {user->
-            fbReference.child("Users")
-                .child(user.uid)
-                .child(word.wordLevel)
-                .child(word.wordId)
-                .setValue(word)
-        }
     }
 }

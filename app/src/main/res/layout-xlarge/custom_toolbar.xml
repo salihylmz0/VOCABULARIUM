@@ -57,6 +57,15 @@
             app:layout_constraintEnd_toStartOf="@+id/GV1_0.85"
             app:layout_constraintStart_toStartOf="@+id/GV1_0.15"
             app:layout_constraintTop_toTopOf="parent" />
-
+        <ImageView
+            android:id="@+id/isLoggedInImage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="3:1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/GV1_0.85"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/profile_vector_white" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

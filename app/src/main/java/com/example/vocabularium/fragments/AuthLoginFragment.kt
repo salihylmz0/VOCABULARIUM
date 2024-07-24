@@ -14,6 +14,7 @@ import androidx.activity.addCallback
 import androidx.databinding.DataBindingUtil
 import com.example.vocabularium.R
 import com.example.vocabularium.activities.MainActivity
+import com.example.vocabularium.activities.SplashActivity
 import com.example.vocabularium.databinding.FragmentAuthLoginBinding
 import com.example.vocabularium.dialog_fragments.ForgetPasswordDialogFragment
 import com.example.vocabularium.dialog_fragments.VerificationDialogFragment
@@ -40,7 +41,8 @@ class AuthLoginFragment : Fragment() {
         viewModel.isLoginSuccessful.observe(viewLifecycleOwner,{
             if (it == true){
                 viewModel.isLoginSuccessful.value = false
-                goToHomeFragment()
+                val intent = Intent(requireActivity(),SplashActivity::class.java)
+                startActivity(intent)
             }
         })
         viewModel.isNotEmailVerified.observe(viewLifecycleOwner,{

@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_authLoginFragment_to_authRegisterFragment"
             app:destination="@id/authRegisterFragment" />
+        <action
+            android:id="@+id/action_authLoginFragment_to_splashActivity"
+            app:destination="@id/splashActivity" />
     </fragment>
     <fragment
         android:id="@+id/authRegisterFragment"
@@ -23,4 +26,9 @@
             android:id="@+id/action_authRegisterFragment_to_authLoginFragment"
             app:destination="@id/authLoginFragment" />
     </fragment>
+    <activity
+        android:id="@+id/splashActivity"
+        android:name="com.example.vocabularium.activities.SplashActivity"
+        android:label="SplashActivity"
+        tools:layout="@layout/activity_splash"/>
 </navigation>

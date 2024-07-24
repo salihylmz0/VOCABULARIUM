@@ -96,6 +96,12 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.65" />
         <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topOfDeleteAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.75" />
+        <androidx.constraintlayout.widget.Guideline
             android:id="@+id/endOfLL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -225,6 +231,21 @@
             app:layout_constraintEnd_toStartOf="@+id/endOfChange"
             app:layout_constraintStart_toStartOf="@+id/startOfChange"
             app:layout_constraintTop_toTopOf="@+id/topOffChange" />
+
+        <Button
+            android:id="@+id/deleteAccount"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/background3"
+            android:fontFamily="@font/quicksand_bold"
+            android:onClick="@{()->userUpdateFragmentObject.deleteAccount()}"
+            android:text="Delete Account"
+            android:textColor="@color/text2"
+            app:layout_constraintDimensionRatio="2.5:1"
+            app:layout_constraintEnd_toStartOf="@+id/endOfChange"
+            app:layout_constraintStart_toStartOf="@+id/startOfChange"
+            app:layout_constraintTop_toTopOf="@+id/topOfDeleteAccount" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

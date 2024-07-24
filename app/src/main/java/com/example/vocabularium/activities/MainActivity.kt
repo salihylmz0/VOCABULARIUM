@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.NavHostFragment
@@ -57,6 +58,7 @@ class MainActivity : AppCompatActivity() {
         }
         viewModel.userInfo.observe(this,{
             NawDrawerUserInfo(it)
+
         })
         onBackPressedDispatcher.addCallback(callBack)
         setUpDrawerContent(design.navigationView)
@@ -82,9 +84,11 @@ class MainActivity : AppCompatActivity() {
         if (auth.currentUser != null){
             design.navigationView.menu.findItem(R.id.authentication).setIcon(R.drawable.logout_2_svgrepo_com)
             design.navigationView.menu.findItem(R.id.authentication).setTitle(R.string.log_out)
+            design.include.isLoggedInImage?.setImageResource(R.drawable.profile_vector_green)
         }else{
             design.navigationView.menu.findItem(R.id.authentication).setIcon(R.drawable.login_2_svgrepo_com)
             design.navigationView.menu.findItem(R.id.authentication).setTitle(R.string.log_in)
+            design.include.isLoggedInImage?.setImageResource(R.drawable.profile_vector_white)
         }
     }
     fun NawDrawerUserInfo(user: User){

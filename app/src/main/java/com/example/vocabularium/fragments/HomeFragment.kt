@@ -47,20 +47,14 @@ class HomeFragment : Fragment() {
         //viewModel.deleteAllWordsFromFB()
         user.value = auth.currentUser
         updateUserEmail()
-        viewModel.allRoomWords.observe(viewLifecycleOwner,{
-            viewModel.checkFirstLogin(design.progressBarHomeFragment)
-        })
-
 
         //Checking wheter logged in and act accordingly
         if(user.value != null){
             progressBarOn()
             viewModel.getLevelWordsFromFB()
-            Toast.makeText(requireActivity(),"Giriş Yapıldı",Toast.LENGTH_SHORT).show()
         }else {
             progressBarOn()
             viewModel.getLevelWordsFromRoom()
-            Toast.makeText(requireActivity(),"lütfen giriş yapınız",Toast.LENGTH_SHORT).show()
         }
 
         //Shared Preferences for controlling isFirst Opening the app
@@ -132,7 +126,6 @@ class HomeFragment : Fragment() {
         val callBack = requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner){
             val dialog = BackPressDialogFragment()
             dialog.show(parentFragmentManager,"backPressOut")
-
         }
     }
     fun updateUserEmail(){

@@ -8,6 +8,7 @@ import android.net.Uri
 import android.util.Log
 import android.util.LogPrinter
 import android.view.View
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
@@ -16,6 +17,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import com.bumptech.glide.Glide
 import com.example.vocabularium.activities.AuthenticationActivity
+import com.example.vocabularium.activities.MainActivity
+import com.example.vocabularium.animations.Attention
 import com.example.vocabularium.animations.Rotate
 import com.example.vocabularium.animations.Slide
 import com.example.vocabularium.firebase.FirebaseWords
@@ -44,6 +47,7 @@ class UpdateUserViewModel @Inject constructor(@ApplicationContext val context: C
     val storageReference = FirebaseStorage.getInstance().getReference("Users")
     val toastMessage = MutableLiveData<String>()
     val animation = Rotate()
+    val animation2 = Attention()
     val user = Firebase.auth.currentUser
     val auth = Firebase.auth
     val fbDataBaseRef = Firebase.database.reference
@@ -99,9 +103,21 @@ class UpdateUserViewModel @Inject constructor(@ApplicationContext val context: C
                             if (it.isSuccessful){
                                 dialog.show()
                             }
-
                         }
                     }
+                }
+            }
+        }
+    }
+    fun deleteAccount(context:Context,button:Button){
+        user?.let {
+            user.delete().addOnCompleteListener {
+                if (it.isSuccessful){
+                    animation2.Bounce(button).apply { duration = 1500; start() }
+                    auth.signOut()
+                    toastMessage.value = "User successfully deleted"
+                    val intent = Intent(context,MainActivity::class.java)
+                    context.startActivity(intent)
                 }
             }
         }

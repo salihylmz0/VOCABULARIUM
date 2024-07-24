@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
 
     <application
         android:name=".dependency_injection.HiltCodeGenerator"
@@ -19,29 +20,35 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="34">
         <activity
-            android:name=".activities.DataAddingActivityFB"
-            android:exported="false" />
-        <activity
             android:name=".activities.ProfileActivity"
-            android:exported="false" />
+            android:screenOrientation="portrait"
+            android:exported="false"
+            tools:ignore="AppLinkUrlError">
+        </activity>
+
         <activity
             android:name=".activities.MyWordsPracticeActivity"
+            android:screenOrientation="portrait"
             android:exported="false"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".activities.MainActivity"
+            android:screenOrientation="portrait"
             android:exported="false"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".activities.SideActivity"
+            android:screenOrientation="portrait"
             android:exported="false"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".activities.AuthenticationActivity"
+            android:screenOrientation="portrait"
             android:exported="false"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".activities.SplashActivity"
+            android:screenOrientation="portrait"
             android:exported="true"
             android:theme="@style/Theme.Vocabularium">
             <intent-filter>
